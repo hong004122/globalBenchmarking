@@ -1,3 +1,68 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: black;
+}
+* {
+    color: white;
+    text-decoration: none;
+}
+.afterCancel:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+@media screen and (min-width: 1280px) {
+    header,
+    section,
+    nav {
+        max-width: 1840px;
+    }
+    /* all Using */
+
+    aside {
+        display: none;
+    }
+    /* aside fin */
+
+    header {
+        padding: 30px 2%;
+    }
+    header h1,
+    header > span {
+        width: 50%;
+        float: left;
+    }
+    header h1 a {
+        display: flex;
+    }
+    header h1 a svg {
+        height: 40px;
+    }
+    header h1 a span {
+        display: inline-block;
+        line-height: 40px;
+        font-size: 25px;
+        margin-left: 8px;
+    }
+    header > span {
+        display: block;
+    }
+    header > span a {
+        display: flex;
+        height: 40px;
+        align-items: center;
+        justify-content: right;
+    }
+    header >  span a svg {
+        height: 25px;
+    }
+    /* header fin */
+
+    footer div {
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+        line-height: 70px;
+    }
 }

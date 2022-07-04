@@ -1,6 +1,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: black;
+    padding: 0 2.08%;
 }
 * {
     color: white;
@@ -13,20 +14,18 @@ body {
 }
 
 @media screen and (min-width: 1280px) {
-    header,
-    section,
-    nav {
-        max-width: 1840px;
-    }
     /* all Using */
 
     aside {
         display: none;
     }
     /* aside fin */
-
     header {
-        padding: 30px 2%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 95.84%;
+        padding: 30px 2.08%;
     }
     header h1,
     header > span {

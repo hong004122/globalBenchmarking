@@ -1,0 +1,92 @@
+
+
+@media screen and (min-width: 1280px) {
+    .wrap .innerWrap section#home {
+        height: 100vh;
+        background: url('../images/bg_01.png') no-repeat left 50px / 100%;
+        padding: 200px 0 0 18.58%;
+        box-sizing: border-box;
+    }
+    .wrap .innerWrap section#home h2 {
+        font-size: 6vw;
+        font-weight: 900;
+        max-width: 60vw;
+        margin-bottom: 85px;
+        line-height: 6.5vw;
+    }
+    .wrap .innerWrap section#home h2 + a {
+        position: relative;
+        display: block;
+        width: 170px;
+        margin-bottom: 20vh;
+        font-size: 22px;
+        font-weight: 700;
+        line-height: 50px;
+    }
+    .wrap .innerWrap section#home h2 + a:before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        width: 155px;
+        height: 50px;
+        background-color: #0f33ff;
+        transition: 0.15s width ease-in-out;
+    }
+    .wrap .innerWrap section#home h2 + a:hover:before {
+        width: 190px;
+    }
+    .wrap .innerWrap section#home h2 + a svg {
+        width: 40px;
+        position: absolute;
+        right: 25px;
+        top: 14px;
+        height: 22px;
+    }
+    .wrap .innerWrap section#home h2 + a svg path {
+        transition-duration: 0.2s;
+    }
+    .wrap .innerWrap section#home h2 + a:hover svg path {
+        d: path("M1.6,9.4l25.7,0c0,0,0.1,0,0-0.1l-6.9-6.7c-0.7-0.6-0.7-1.6,0-2.2c0.7-0.6,1.7-0.6,2.3,0l9.8,9.4c0.3,0.3,0.5,0.7,0.5,1.1s-0.2,0.9-0.5,1.1l-9.7,9.3c-0.7,0.6-1.8,0.8-2.4,0.1c-0.7-0.6-0.7-1.6,0-2.2l7-6.6c0,0,0-0.1,0-0.1l-25.7,0C0.7,12.6,0,11.9,0,11C0,10.1,0.7,9.4,1.6,9.4z")
+    }
+    .wrap .innerWrap section#home ul li {
+        position: relative;
+        width: 32%;
+        float: left;
+        display: block;
+    }
+    .wrap .innerWrap section#home ul li:not(:first-of-type) {
+        margin-left: 2%;
+    }
+    
+    .wrap .innerWrap section#home ul li:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -35px;
+        width: 50px;
+        height: 8px;
+        background-color: transparent;
+        transition-duration: 0.5s;
+    }
+    .wrap .innerWrap section#home ul li:hover:before {
+        background-color: #0f33ff;
+    }
+    .wrap .innerWrap section#home ul li * {
+        transition-duration: 0.5s;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    .wrap .innerWrap section#home ul li:hover *{
+        color: #fff;
+    }
+    .wrap .innerWrap section#home ul li strong {
+        display: block;
+        margin-bottom: 15px;
+        font-size: 22px;
+    }
+    .wrap .innerWrap section#home ul li p {
+        max-width: 60%;
+        line-height: 22px;
+    }
+}

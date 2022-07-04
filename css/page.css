@@ -1,10 +1,12 @@
 
 
 @media screen and (min-width: 1280px) {
-    .wrap .innerWrap section#home {
+    section {
         height: 100vh;
-        background: url('../images/bg_01.png') no-repeat left 50px / 100%;
         padding: 200px 0 0 18.58%;
+    }
+    .wrap .innerWrap section#home {
+        background: url('../images/bg_01.png') no-repeat left 50px / 100%;
         box-sizing: border-box;
     }
     .wrap .innerWrap section#home h2 {
@@ -88,5 +90,53 @@
     .wrap .innerWrap section#home ul li p {
         max-width: 60%;
         line-height: 22px;
+    }
+    .wrap .innerWrap section#works {
+        position: relative;
+    }
+    .wrap .innerWrap section#works h2 {
+        font-size: 42px;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+    .wrap .innerWrap section#works ul {
+        max-width: 80%;
+        margin: 0 auto;
+
+    }
+    .wrap .innerWrap section#works ul li {
+        display: block;
+        float: left;
+    }
+    .wrap .innerWrap section#works ul li:not(.active) {
+        width: 25%;
+    }
+    .wrap .innerWrap section#works ul li.active {
+        width: 35%;
+    }
+    .wrap .innerWrap section#works ul li:not(.noMargin) {
+        margin-left: 7.5%;
+    }
+    .wrap .innerWrap section#works ul li span {
+        display: block;
+        width: 100%;
+        margin-bottom: 35px;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    .wrap .innerWrap section#works ul li:nth-child(1) span{
+        background-image: url('../images/slideImg_01.jpg');
+    }
+    .wrap .innerWrap section#works ul li:nth-child(2) span{
+        background-image: url('../images/slideImg_02.jpg');
+    }
+    .wrap .innerWrap section#works ul li:nth-child(3) span{
+        background-image: url('../images/slideImg_03.jpg');
+    }
+    .wrap .innerWrap section#works .btnBox {
+        position: absolute;
+        left: 0;
+        top: 50%;
     }
 }

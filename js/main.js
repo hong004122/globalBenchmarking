@@ -8,7 +8,9 @@
         }
     }
     slideImgHeight();
+
+    
     window.addEventListener('resize', () => {
         slideImgHeight();
-    })
+    });
 })();

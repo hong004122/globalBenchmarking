@@ -17,7 +17,64 @@ body {
     /* all Using */
 
     aside {
+        position: fixed;
+        left: 7%;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 70vh;
+        z-index: 10;
+    }
+    aside ul {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        border-left: 2px solid rgba(255,255,255,0.2);
+        padding-left: 15px;
+    }
+    aside ul li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 20%;
+    }
+    aside ul li:before {
+        display: block;
+        position: absolute;
+        color: rgba(255, 255, 255, 0.2);
+    }
+    aside ul li.active:before {
+        left: -45px;
+        color: #fff;
+    }
+    aside ul li:nth-child(1):before {
+        content: '01'
+    }
+    aside ul li:nth-child(2):before {
+        content: '02'
+    }
+    aside ul li:nth-child(3):before {
+        content: '03'
+    }
+    aside ul li:nth-child(4):before {
+        content: '04'
+    }
+    aside ul li:nth-child(5):before {
+        content: '05'
+    }
+    aside ul li:after {
+        content: '';
+        width: 5px;
+        height: 5px;
+        position: absolute;
+        left: -19px;
+        border-radius: 50%;
+        background-color: #0f33ff;
+    }
+    aside ul li a {
         display: none;
+    }
+    aside ul li.active a {
+        display: block;
     }
     /* aside fin */
     header {

@@ -191,18 +191,30 @@
     /* works fin */
     
     .wrap .innerWrap section#about {
+        position: relative;
         background: url('../images/bg_02.png') no-repeat left top / 100%;
+    }
+    .wrap .innerWrap section#about .bgSvg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
     }
     .wrap .innerWrap section#about h2 {
         font-size: 6vw;
         font-weight: 900;
-        margin-bottom: 60px;
+        margin-bottom: 120px;
     }
     .wrap .innerWrap section#about a {
+        display: block;
+        width: 160px;
         font-size: 24px;
         height: 30px;
+        margin-bottom: 120px;
     }
-    .wrap .innerWrap section#about a svg {
+        .wrap .innerWrap section#about a svg {
         height: 18px;
         width: 50px;
     }
@@ -212,5 +224,81 @@
     .wrap .innerWrap section#about a:hover svg path {
         d: path("M1.6,9.4h30.8c0,0,0.1,0,0-0.1l-6.9-6.7c-0.7-0.6-0.7-1.6,0-2.3c0.7-0.6,1.7-0.6,2.3,0l9.8,9.4c0.3,0.3,0.5,0.7,0.5,1.1s-0.2,0.9-0.5,1.1L28,21.5c-0.7,0.6-1.8,0.8-2.4,0.1c-0.7-0.6-0.7-1.6,0-2.3l7-6.6c0,0,0-0.1,0-0.1H1.6C0.7,12.6,0,11.9,0,11C0,10.1,0.7,9.4,1.6,9.4z")
     }
+    .wrap .innerWrap section#about ul {
+        width: 60%;
+    }
+    .wrap .innerWrap section#about ul li {
+        display: block;
+        float: left;
+        width: 29%;
+        padding-top: 120px;
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+        background-position: center;
+        outline: 8px solid #0f33ff;
+        position: relative;
+    }
+    .wrap .innerWrap section#about ul li:not(:first-child) {
+        margin-left: 6.5%;
+    }
+    .wrap .innerWrap section#about ul li:nth-child(1) {
+        background-image: url('../images/carrerImg_01.jpg');
+    }
+    .wrap .innerWrap section#about ul li:nth-child(2) {
+        background-image: url('../images/carrerImg_02.jpg');
+    }
+    .wrap .innerWrap section#about ul li:nth-child(3) {
+        background-image: url('../images/carrerImg_03.jpg');
+    }
+    .wrap .innerWrap section#about ul li span {
+        position: absolute;
+        bottom: -20px;
+        left: 20px;
+        display: block;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    /* about fin */
+    .wrap .innerWrap section#contact {
+        position: relative;
+        background: url('../images/bg_03.png') no-repeat center;
+    }
+    .wrap .innerWrap section#contact h2 {
+        display: none;
+    }
+    .wrap .innerWrap section#contact address {
+        width: 30%;
+        position: absolute;
+        right: 3%;
+        top: 30%;
+    }
+    .wrap .innerWrap section#contact ul li {
+        display: block;
+        font-style: normal;
+        text-align: center;
+    }
+    .wrap .innerWrap section#contact ul li:nth-child(-n+3) {
+        font-size: 20px;
+        margin-bottom: 50px;
+    }
+    .wrap .innerWrap section#contact ul li.btn a {
+        display: block;
+        width: 200px;
+        margin: 0 auto;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 60px;
+    }
+    .wrap .innerWrap section#contact ul li.blue a {
+        background-color: #1769ff;
+    }
+    .wrap .innerWrap section#contact ul li.pink a {
+        background-color: #ea4c89;
+    }
+    .wrap .innerWrap section#contact ul li.btn:not(:last-of-type) {
+        margin-bottom: 40px;
+    }
+    /* contact fin */
 
+    .wrap .innerWrap section#
 }

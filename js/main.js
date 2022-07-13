@@ -4,119 +4,93 @@
         for (let i = 0; i < imgBox.length; i++) {
             const imgWidth = window.getComputedStyle(imgBox[i]).width;
             imgBox[i].style.height = imgWidth;
+            imgBox[i].style.top = `calc(50% - ${imgWidth})`;
         }
     }
-    slideImgHeight();
 
-    function fullPage(e) {
-        const section1 = document.querySelector('.section1');
-        const section2 = document.querySelector('.section2');
-        const section3 = document.querySelector('.section3');
-        const section4 = document.querySelector('.section4');
-        const section5 = document.querySelector('.section5');
+    function slideImgPrev() {
+        const slideBox = document.querySelector('#works ul')
+        const slide1 = document.querySelector('#works ul li.first.noMargin');
+        const slide2 = document.querySelector('#works ul li.second');
+        const slide3 = document.querySelector('#works ul li.last');
+
+            slideBox.style.opacity = `0`;
+            setTimeout(() => {
+                slide1.classList.remove('first', 'noMargin');
+                slide1.classList.add('last');
+                slide2.classList.remove('second', 'active');
+                slide2.classList.add('first', 'noMargin');
+                slide3.classList.remove('last');
+                slide3.classList.add('second', 'active');
+                slideImgHeight();
+                slideBox.style.opacity = `1`;
+            }, 300);
+        };
+
+    function slideImgNext() {
+        const slideBox = document.querySelector('#works ul');
+        const slide1 = document.querySelector('#works ul li.first.noMargin');
+        const slide2 = document.querySelector('#works ul li.second');
+        const slide3 = document.querySelector('#works ul li.last');
+
+            slideBox.style.opacity = `0`;
+            setTimeout(() => {
+                slide1.classList.remove('first', 'noMargin');
+                slide1.classList.add('second', 'active');
+                slide2.classList.remove('second', 'active');
+                slide2.classList.add('last');
+                slide3.classList.remove('last');
+                slide3.classList.add('first', 'noMargin');
+                slideImgHeight();
+                slideBox.style.opacity = `1`;
+            }, 200);
+        };
+        
+
+    document.querySelector('.prev').addEventListener('click', slideImgPrev);
+    document.querySelector('.next').addEventListener('click', slideImgNext);
+
+
+    function menuOn() {
+        const body = document.querySelector('body');
+        const menuBtn = document.querySelector('.menuBtn');
+        const menu = document.querySelector('.menu')
+        const contents = document.querySelector('.wrap');
+        menuBtn.addEventListener('click', function() {
+            body.classList.add('menuOn');
+            menu.classList.add('active');
+            contents.classList.remove('normal')
+            contents.classList.add('menuOn');
+            menuOff();
+        });
         
     }
-    
+
+    function menuOff() {
+        const body = document.querySelector('body');
+        const block = document.querySelector('.contentBlock');
+        const contents = document.querySelector('.wrap');
+        const menu = document.querySelector('.menu')
+        const contentsClass = contents.classList;
+        if(contentsClass.length === 2) {
+            block.addEventListener('click', function() {
+                contents.classList.remove('menuOn');
+                contents.classList.add('normal');
+                body.classList.remove('menuOn');
+                menu.classList.remove('active');
+            });
+        }
+    }
+
+
+    menuOn();
+
     window.addEventListener('resize', () => {
         slideImgHeight();
     });
-    window.addEventListener('scroll', fullPage);
+
+    window.addEventListener('DOMContentLoaded', () => {
+        slideImgHeight();
+    })
+
 })();
-
-
-
-
-
-// document.addEventListener('wheel', scrollPage);
-
-// function scrollPage(e) {
-//     var nodesName = ['HEADER', 'SECTION', 'FOOTER'];
-//     console.log(e.target.nodeName);
-//     if (nodesName.includes(e.target.nodeName)) {
-//         var next = e.target.nextElementSibling;
-//         var prev = e.target.previousElementSibling;
-//     } else {
-//         var next = e.target.closest(nodesName).nextElementSibling;
-//         var prev = e.target.closest(nodesName).previousElementSibling;
-//     }
-  
-//   if (e.deltaY < 0) {
-//         e.preventDefault();
-//         if(nodesName.includes(prev.nodeName)) {
-//         verticalScroll(prev, 1500, 'easeInOutCubic');
-//         e.target.closest(nodesName).classList.remove('active')
-//         prev.classList.add('active')
-//     }
-    
-//     } else if (e.deltaY > 0) {
-//         e.preventDefault();
-//         if(nodesName.includes(next.nodeName)) {
-//             verticalScroll(next, 1500, 'easeInOutQuad', runAfter);
-//             e.target.closest(nodesName).classList.remove('active');
-//             next.classList.add('active');
-//         }
-//     } else {
-//         return false;
-//     }
-// }
-
-// function runAfter() {
-//      console.log('after');
-// }
-
-// function verticalScroll(destination) {
-//     var duration = arguments.length <= 1 || arguments[1] === undefined ? 200 : arguments[1];
-//     var easing = arguments.length <= 2 || arguments[2] === undefined ? 'linear' : arguments[2];
-//     var callback = arguments[3];
-//     var easings = {
-//         easeInOutQuad: function easeInOutQuad(t) {
-//         return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-//         },
-//         easeInCubic(t) {
-//         return t * t * t;
-//         },
-//         easeInOutCubic(t) {
-//         return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-//         }
-//     };
-    
-//     console.log(easings.easeInOutQuad);
-    
-//     var start = window.pageYOffset;
-//     var startTime = 'now' in window.performance ? performance.now() : new Date().getTime();
-//     var documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);
-//     var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight;
-//     var destinationOffset = typeof destination === 'number' ? destination : destination.offsetTop;
-//     var destinationOffsetToScroll = Math.round(documentHeight - destinationOffset < windowHeight ? documentHeight - windowHeight : destinationOffset);
-    
-//     console.log("documentHeight " + documentHeight);
-//     console.log("windowHeight " + windowHeight);
-//     console.log("destinationOffset " + destinationOffset);
-//     console.log("destinationOffsetToScroll " + destinationOffsetToScroll);
-
-//     if ('requestAnimationFrame' in window === false) {
-//         window.scroll(0, destinationOffsetToScroll);
-//         if (callback) {
-//         callback();
-//         }
-//         return;
-//     }
-
-//     function scroll() {
-//         var now = 'now' in window.performance ? performance.now() : new Date().getTime();
-//         var time = Math.min(1, (now - startTime) / duration);
-//         var timeFunction = easings[easing](time);
-//         window.scroll(0, Math.ceil(timeFunction * (destinationOffsetToScroll - start) + start));
-
-//         if (window.pageYOffset === destinationOffsetToScroll) {
-//         if (callback) {
-//             callback();
-//       }
-//       return;
-//     }
-    
-//     requestAnimationFrame(scroll);
-//   }
-  
-//   scroll();
-// }
